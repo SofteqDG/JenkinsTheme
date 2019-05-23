@@ -26,12 +26,12 @@
                         continue;
                     }
 
-                    var separatorHrElement = settingMainElement.querySelector('hr')
-                    if (separatorHrElement == null) {
-                        continue;
+                    var separatorStyleElements = settingMainElement.querySelectorAll('*');
+                    for (var index = 0; index < separatorStyleElements.length; index++) {
+                        var clone = separatorStyleElements[index].clone();
+                        clone.innerText = null;
+                        settingNameElement.appendChild(clone);
                     }
-
-                    settingNameElement.appendChild(separatorHrElement.clone());
                 }
             });
         };
